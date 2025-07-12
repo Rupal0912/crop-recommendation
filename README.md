@@ -1,105 +1,128 @@
-🌱 Crop Recommendation System using Machine Learning
-This project is a Machine Learning-based Crop Recommendation System designed to assist farmers and agricultural stakeholders in selecting the most suitable crop for cultivation, based on soil and environmental parameters.
+# 🌾 Crop Recommendation System using Machine Learning
 
-The system uses multiple supervised learning models to analyze factors such as Nitrogen (N), Phosphorus (P), Potassium (K), temperature, humidity, pH, and rainfall. It provides real-time predictions via a Streamlit web app interface and supports multiple ML models like Random Forest, KNN, Logistic Regression, and XGBoost.
+This is a Machine Learning–based Crop Recommendation System designed to assist farmers and agricultural stakeholders in selecting the most suitable crop for cultivation based on soil and climate conditions.
 
-🚀 Features
-✅ Multi-model prediction (Random Forest, KNN, Logistic Regression, XGBoost)
+The system uses supervised learning models to analyze factors like Nitrogen (N), Phosphorus (P), Potassium (K), temperature, humidity, pH, and rainfall. It provides a Streamlit web app interface and supports multiple ML models like Random Forest, KNN, Logistic Regression, and XGBoost.
 
-🌡️ Input parameters via sliders (N, P, K, Temperature, Humidity, pH, Rainfall)
+---
 
-📊 Dashboard with:
+## 🚀 Features
 
-Feature importance
+- ✅ **Multi-model prediction**  
+  Supports Random Forest, K-Nearest Neighbors (KNN), Logistic Regression, and XGBoost.
 
-Model accuracy comparison
+- 🔢 **Input via sliders**  
+  Input features like Nitrogen (N), Phosphorus (P), Potassium (K), Temperature, Humidity, pH, and Rainfall.
 
-Confusion matrix (heatmap)
+- 📊 **Dashboard includes:**
+  - Feature importance (bar graph)
+  - Model accuracy comparison
+  - Confusion matrix (heatmap)
 
-🌾 Crop Calendar for sowing/harvest season
+- 📅 **Crop Calendar**  
+  Displays sowing/harvesting season for recommended crops.
 
-🧪 Soil type suggestion module
+- 🧪 **Soil Type Suggestion**  
+  Dropdown with crop suggestions based on selected soil type.
 
-📥 Downloadable prediction reports (CSV format)
+- 📥 **Downloadable Reports**  
+  Download prediction results in CSV format.
 
-🧠 Model accuracy display
+---
 
-☁️ Deployable via Streamlit Cloud
+## 🛠️ Tech Stack
 
-🖼️ App Interface Preview
-(Add screenshots or GIFs here: one for Prediction tab, one for Dashboard)
+- **Programming Language**: Python 3.10+
+- **Libraries**:  
+  `pandas`, `numpy`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `joblib`, `streamlit`
+- **IDE**: Visual Studio Code with Jupyter extension
+- **Deployment**: Streamlit Cloud
+- **Version Control**: Git & GitHub
 
-📁 Project Structure
-kotlin
-Copy
-Edit
-crop-recommendation/
+---
+
+## 📁 Project Structure
+
 ├── app/
-│   ├── rf_model.pkl
-│   ├── knn_model.pkl
-│   ├── lr_model.pkl
-│   ├── xgb_model.pkl
-│   ├── label_encoder.pkl
-│   ├── scaler.pkl
-│   └── model_accuracies.pkl
+│ ├── rf_model.pkl
+│ ├── knn_model.pkl
+│ ├── lr_model.pkl
+│ ├── xgb_model.pkl
+│ ├── scaler.pkl
+│ ├── label_encoder.pkl
+│ └── model_accuracies.pkl
 ├── data/
-│   ├── crop_recommendation.csv
-│   └── crop_recommendation_6600_realistic.csv
+│ ├── crop_recommendation.csv
+│ └── crop_recommendation_6600_realistic.csv
 ├── notebooks/
-│   └── model_training.ipynb
+│ ├── EDA.ipynb
+│ └── model_training.ipynb
 ├── streamlit_app.py
-├── README.md
-└── requirements.txt
-🔧 Setup Instructions
-Clone the Repository
+├── requirements.txt
+└── README.md
 
-bash
-Copy
-Edit
-git clone https://github.com/<your-username>/crop-recommendation.git
-cd crop-recommendation
-Install Dependencies
 
+---
+
+## ⚙️ Setup Instructions
+
+To run this project locally:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/rupal0912/crop-recommendation.git
+   cd crop-recommendation
+2. Install the required libraries
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Run the Streamlit App
-
+3. Run the Streamlit app
 bash
 Copy
 Edit
 streamlit run streamlit_app.py
-Make sure the .pkl model files and datasets are correctly placed inside their respective folders (/app, /data).
+🌐 Live Demo (Optional)
+If deployed on Streamlit Cloud or another hosting platform, add the link below:
 
-📊 Machine Learning Models
+🔗 Click here to try the live app
+
+📈 Results
+Model Accuracy Scores:
+
 Model	Accuracy
 Random Forest	98.2%
 Logistic Regression	96.9%
 K-Nearest Neighbors	97.3%
 XGBoost	98.5%
 
-All models were trained using GridSearchCV and evaluated using standard classification metrics.
+📚 Dataset
+Source: Kaggle – Crop Recommendation Dataset
 
-🔮 Future Enhancements
-🌐 Live Weather API integration for real-time weather-based prediction
+Augmented from 2200 rows to 6600+ using noise injection techniques.
 
-🗣️ Multilingual support for regional farmers
+📌 Future Enhancements
+🌦️ Live weather API integration
 
-📱 Mobile app version
+🌐 Multilingual interface for farmers
 
-💊 Fertilizer & pest control suggestions
+🧪 Fertilizer and pesticide suggestion modules
 
-☁️ Cloud database for storing user history
+☁️ Cloud deployment with authentication
 
-📚 References
-Kaggle Dataset
+🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
 
-Scikit-learn Documentation
-
-XGBoost Documentation
-
-Streamlit Documentation
+📄 License
+This project is open-source and available under the MIT License.
 
 🙌 Acknowledgements
-This project was developed as part of an academic training initiative to explore real-world AI applications in agriculture. Special thanks to mentors and faculty for their guidance and support.
+Scikit-learn
+
+XGBoost
+
+Streamlit
+
+Kaggle Dataset
+
+
