@@ -1,114 +1,39 @@
-# 🌾 Crop Recommendation System using Machine Learning
+# 🌾 Smart Crop Recommendation System
 
-This project is a **Machine Learning–based Crop Recommendation System** designed to assist farmers and agricultural stakeholders in selecting the most suitable crop for cultivation based on soil and climate parameters.
-
-It uses multiple supervised learning models like **Random Forest, KNN, Logistic Regression**, and **XGBoost**, and is deployed using **Streamlit** for interactive web access.
+A Machine Learning–based system that recommends the most suitable crop based on soil nutrients and climate conditions.  
+Developed using **Python, Scikit-learn, XGBoost, and Streamlit** — built for farmers, agricultural experts, and students.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
 - ✅ Multi-model prediction (Random Forest, KNN, Logistic Regression, XGBoost)
-- 🔧 Input via sliders for:
-  - Nitrogen (N)
-  - Phosphorus (P)
-  - Potassium (K)
-  - Temperature
-  - Humidity
-  - pH
-  - Rainfall
-- 📊 Dashboard includes:
-  - Feature Importance
+- 📊 Interactive dashboard with:
+  - Feature Importance Chart
   - Model Accuracy Comparison
-  - Confusion Matrix (heatmap)
-- 📅 Crop Calendar (Sowing & Harvesting guidance)
-- 🌱 Soil Type Suggestion Module
+  - Confusion Matrix Heatmap
 - 📥 Downloadable prediction reports (CSV format)
+- 🗺️ Crop Calendar & Soil Type Suggestions
+- 🌐 Hosted on Streamlit Cloud with an interactive web interface
 
 ---
 
-## 🧠 Machine Learning Models
-
-| Model                | Accuracy   |
-|---------------------|------------|
-| Random Forest        | 98.2%      |
-| Logistic Regression  | 96.9%      |
-| K-Nearest Neighbors  | 97.3%      |
-| XGBoost              | 98.5%      |
-
-All models were trained on a dataset of 6600+ samples (augmented from 2200 using noise injection) and saved as `.pkl` files using `joblib`.
+## 🔗 [👉 Click here to try the Live App on Streamlit](https://rupal0912-crop-recommendation-streamlit-app-dyeqej.streamlit.app/)
 
 ---
 
-crop-recommendation/
-├── app/
-│ ├── rf_model.pkl
-│ ├── lr_model.pkl
-│ ├── knn_model.pkl
-│ ├── xgb_model.pkl
-│ ├── model_accuracies.pkl
-│ ├── scaler.pkl
-│ └── label_encoder.pkl
-├── data/
-│ ├── crop_recommendation.csv
-│ └── crop_recommendation_6600_realistic.csv
-├── notebooks/
-│ ├── EDA.ipynb
-│ └── model_training.ipynb
-├── streamlit_app.py
-├── requirements.txt
-└── README.md
-
-yaml
-Copy
-Edit
-
----
-
-## ⚙️ How to Run This Project Locally
-
-### 1. Clone the repository
+## 🛠️ Getting Started Locally
 
 ```bash
+# 1️⃣ Clone the repository
 git clone https://github.com/rupal0912/crop-recommendation.git
 cd crop-recommendation
-2. Install the required libraries
-bash
-Copy
-Edit
+
+# 2️⃣ Install dependencies
 pip install -r requirements.txt
-3. Run the Streamlit app
-bash
-Copy
-Edit
+
+# 3️⃣ Run the Streamlit app
 streamlit run streamlit_app.py
-🌐 Live Demo (Optional)
-👉 Click here to try the live app
 
-📊 Dataset Source
-Kaggle – Crop Recommendation Dataset
-
-Augmented from 2200 to 6600+ rows using noise injection for better generalization
-
-🔮 Future Enhancements
-🌦️ Live weather API integration
-
-🌍 Multilingual interface for wider farmer accessibility
-
-🧪 Fertilizer and pest management suggestions
-
-☁️ Cloud deployment with login support
-
-🙌 Acknowledgements
-Scikit-learn
-
-XGBoost
-
-Streamlit
-
-Kaggle Dataset
-
-📄 License
-This project is licensed under the MIT License.
 
 
