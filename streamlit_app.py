@@ -6,15 +6,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 from io import StringIO
+from xgboost import XGBClassifier
 from sklearn.metrics import confusion_matrix
 
 # Load models and accuracy scores
-model_dict = {
-    "Random Forest": joblib.load("app/rf_model.pkl"),
-    "Logistic Regression": joblib.load("app/lr_model.pkl"),
-    "KNN": joblib.load("app/knn_model.pkl"),
-    "XGBoost": joblib.load("app/xgb_model.pkl"),
-}
+# model_dict = {
+#     "Random Forest": joblib.load("app/rf_model.pkl"),
+#     "Logistic Regression": joblib.load("app/lr_model.pkl"),
+#     "KNN": joblib.load("app/knn_model.pkl"),
+#     "XGBoost": joblib.load("app/xgb_model.pkl"),
+# }
+model = joblib.load("app/rf_model.pkl")
+
 model_scores = joblib.load("app/model_accuracies.pkl")
 
 le = joblib.load("app/label_encoder.pkl")
@@ -54,9 +57,9 @@ tab1, tab2, tab3, tab4 = st.tabs(["🔍 Prediction", "📊 Dashboard", "🌿 Soi
 
 # -------------------- TAB 1: Prediction --------------------
 with tab1:
-    selected_model_name = st.selectbox("Choose Model", list(model_dict.keys()))
-    model = model_dict[selected_model_name]
-    st.metric(label="🎯 Model Accuracy", value=f"{model_scores[selected_model_name]*100:.2f}%")
+    # selected_model_name = st.selectbox("Choose Model", list(model_dict.keys()))
+    # model = model_dict[selected_model_name]
+    st.metric(label="🎯 Model Accuracy", value=f"{model_scores['Random Forest']*100:.2f}%")
 
     st.subheader("🔍 Predict the Best Crop")
 
@@ -85,7 +88,7 @@ with tab1:
             "Temperature": [temperature], "Humidity": [humidity],
             "pH": [ph], "Rainfall": [rainfall],
             "Predicted Crop": [predicted_crop.capitalize()],
-            "Model": [selected_model_name]
+            "Model": ["Random Forest"]
         })
         csv_buffer = StringIO()
         result_df.to_csv(csv_buffer, index=False)
